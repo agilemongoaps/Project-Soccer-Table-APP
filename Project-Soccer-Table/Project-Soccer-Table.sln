@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project-Soccer-Table", "Project-Soccer-Table\Project-Soccer-Table.csproj", "{31242862-93B0-4A4D-B449-17D08D17C58F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project-Soccer-Table_Testingarea", "Project-Soccer-Table_Testingarea\Project-Soccer-Table_Testingarea.csproj", "{B72A5CA8-5E54-4BC7-9746-981C0E580AC0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31242862-93B0-4A4D-B449-17D08D17C58F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31242862-93B0-4A4D-B449-17D08D17C58F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31242862-93B0-4A4D-B449-17D08D17C58F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31242862-93B0-4A4D-B449-17D08D17C58F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B72A5CA8-5E54-4BC7-9746-981C0E580AC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B72A5CA8-5E54-4BC7-9746-981C0E580AC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B72A5CA8-5E54-4BC7-9746-981C0E580AC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B72A5CA8-5E54-4BC7-9746-981C0E580AC0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

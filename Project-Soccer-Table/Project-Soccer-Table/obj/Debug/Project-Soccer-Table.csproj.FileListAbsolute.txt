@@ -1,0 +1,7 @@
+C:\vsc\_Repos\Project-Soccer-Table-APP\Project-Soccer-Table\Project-Soccer-Table\bin\Debug\Project_Soccer_Table.exe
+C:\vsc\_Repos\Project-Soccer-Table-APP\Project-Soccer-Table\Project-Soccer-Table\bin\Debug\Project_Soccer_Table.pdb
+C:\vsc\_Repos\Project-Soccer-Table-APP\Project-Soccer-Table\Project-Soccer-Table\obj\Debug\Project-Soccer-Table.csproj.AssemblyReference.cache
+C:\vsc\_Repos\Project-Soccer-Table-APP\Project-Soccer-Table\Project-Soccer-Table\obj\Debug\Project-Soccer-Table.csproj.SuggestedBindingRedirects.cache
+C:\vsc\_Repos\Project-Soccer-Table-APP\Project-Soccer-Table\Project-Soccer-Table\obj\Debug\Project-Soccer-Table.csproj.CoreCompileInputs.cache
+C:\vsc\_Repos\Project-Soccer-Table-APP\Project-Soccer-Table\Project-Soccer-Table\obj\Debug\Project_Soccer_Table.exe
+C:\vsc\_Repos\Project-Soccer-Table-APP\Project-Soccer-Table\Project-Soccer-Table\obj\Debug\Project_Soccer_Table.pdb
