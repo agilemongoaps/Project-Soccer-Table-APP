@@ -1,6 +1,6 @@
 # Project Soccer Table
 
-## Inroduction
+## Introduction
 
 Clone the Repository
 ```bash
