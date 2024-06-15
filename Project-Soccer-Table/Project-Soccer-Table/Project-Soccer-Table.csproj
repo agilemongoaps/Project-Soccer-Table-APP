@@ -44,6 +44,7 @@
         <Compile Include="Program.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
         <Compile Include="services\LeagueService.cs" />
+        <Compile Include="services\SortService.cs" />
         <Compile Include="utilities\LeagueUtilities.cs" />
     </ItemGroup>
     <ItemGroup>
@@ -229,6 +230,9 @@
       <Content Include="src\serie-a\day36.txt" />
       <Content Include="src\serie-a\day37.txt" />
       <Content Include="src\serie-a\day38.txt" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="export-output\" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

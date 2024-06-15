@@ -9,6 +9,7 @@ namespace Project_Soccer_Table.models
         public int Draws { get; set; }
         public int GoalsScored { get; set; }
         public int GoalsConceded { get; set; }
+        public string league { get; set; }
  
         public int GoalDifference => GoalsScored - GoalsConceded;
  
