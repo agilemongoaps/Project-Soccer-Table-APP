@@ -18,11 +18,7 @@ namespace Project_Soccer_Table
  
             for (int matchDay = 1; matchDay <= lastMatchDay; matchDay++)
             {
-                var matchDayFile = System.IO.Path.Combine(leagueFolder, $"day0{matchDay}.txt");
-
-                Console.WriteLine(matchDayFile);
-                
-                var results = LeagueUtils.ReadResults(matchDayFile);
+                var results = LeagueUtils.ReadResults(leagueFolder);
                 foreach (var (team1, score1, team2, score2) in results)
                 {
                     leagueService.AddResult(team1, score1, team2, score2);
