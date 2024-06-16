@@ -230,6 +230,11 @@
       <Content Include="src\serie-a\day36.txt" />
       <Content Include="src\serie-a\day37.txt" />
       <Content Include="src\serie-a\day38.txt" />
+      <Content Include="src\Test_league\day01.txt" />
+      <Content Include="src\Test_league\day02.txt" />
+      <Content Include="src\Test_league\day03.txt" />
+      <Content Include="src\Test_league\day04.txt" />
+      <Content Include="src\Test_league\day05.txt" />
     </ItemGroup>
     <ItemGroup>
       <Folder Include="export-output\" />

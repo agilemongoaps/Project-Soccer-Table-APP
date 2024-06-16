@@ -56,8 +56,8 @@ namespace Project_Soccer_Table.classes.services
             team2Record.League = league;
             team1Record.PlayDays.Add(int.Parse(playDay));
             team2Record.PlayDays.Add(int.Parse(playDay));
-
-            if (Leagues.Contains(league) == false)
+            
+            if (!Leagues.Contains(league.ToLower()))
             {
                 Leagues.Add(league.ToLower());
             }
