@@ -49,5 +49,10 @@ namespace Project_Soccer_Table.classes.services
             Console.WriteLine(teams[0].League);
             return teams.Where(t => t.League.ToLower() == league.ToLower()).ToList();
         }
+        
+        public static List<Team> FilterPlayDay(List<Team> teams, int playDay)
+        {
+            return teams.Where(t => t.PlayDays.Contains(playDay)).ToList();
+        }
     }
 }

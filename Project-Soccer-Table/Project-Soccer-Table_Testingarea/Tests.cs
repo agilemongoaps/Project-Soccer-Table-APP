@@ -14,7 +14,7 @@ namespace Project_Soccer_Table_Testingarea
         {
             // Arrange
             var leagueService = new LeagueService();
-            leagueService.AddResult("Team1", 2, "Team2", 1);
+            leagueService.AddResult("Team1", 2, "Team2", 1, "Day01");
 
             // Act
             var table = leagueService.GetTable();
@@ -28,7 +28,7 @@ namespace Project_Soccer_Table_Testingarea
         {
             // Arrange
             var leagueService = new LeagueService();
-            leagueService.AddResult("Team1", 1, "Team2", 2);
+            leagueService.AddResult("Team1", 1, "Team2", 2, "Day01");
 
             // Act
             var table = leagueService.GetTable();
@@ -50,7 +50,7 @@ namespace Project_Soccer_Table_Testingarea
         {
             // Arrange
             var leagueService = new LeagueService();
-            leagueService.AddResult("Team1", 1, "Team2", 1);
+            leagueService.AddResult("Team1", 1, "Team2", 1, "Day01");
 
             // Act
             var table = leagueService.GetTable();
@@ -67,10 +67,10 @@ namespace Project_Soccer_Table_Testingarea
         {
             return new List<Team>
             {
-                new Team("Team1", 10, 3, 1, 1, 12, 7, "League1"),
-                new Team("Team2", 8, 3, 1, 1, 10, 7, "League1"),
-                new Team("Team3", 10, 2, 2, 1, 10, 7, "League1"),
-                new Team("Team4", 15, 5, 0, 0, 15, 9, "League1")
+                new Team("Team1", 10, 3, 1, 1, 12, 7, 1, "League1"),
+                new Team("Team2", 8, 3, 1, 1, 10, 7, 1, "League1"),
+                new Team("Team3", 10, 2, 2, 1, 10, 7, 1, "League1"),
+                new Team("Team4", 15, 5, 0, 0, 15, 9, 1, "League1")
             };
         }
 

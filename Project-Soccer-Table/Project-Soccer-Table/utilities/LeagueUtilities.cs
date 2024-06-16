@@ -100,10 +100,10 @@ namespace Project_Soccer_Table.utilities
             }
         }
 
-        public static List<(string team1, int score1, string team2, int score2, string league)> ReadResults(string srcPath)
+        public static List<(string team1, int score1, string team2, int score2, string playDay, string league)> ReadResults(string srcPath)
         {
             var folders = Directory.GetDirectories(srcPath);
-            var results = new List<(string team1, int score1, string team2, int score2, string league)>();
+            var results = new List<(string team1, int score1, string team2, int score2, string playDay, string league)>();
 
             foreach (var folder in folders)
             {
@@ -111,12 +111,13 @@ namespace Project_Soccer_Table.utilities
                 var files = Directory.GetFiles(folder);
                 foreach (var file in files)
                 {
+                    var playDay = file.Substring(file.LastIndexOf(Path.DirectorySeparatorChar) + 1);
                     var lines = File.ReadAllLines(file);
                     foreach (var line in lines)
                     {
                         var teamtuple = ParseMatchResult(line, folderName);
-
-                        results.Add((teamtuple.Item1, teamtuple.Item2, teamtuple.Item3, teamtuple.Item4, folderName));
+                        playDay = playDay.Split('.')[0];
+                        results.Add((teamtuple.Item1, teamtuple.Item2, teamtuple.Item3, teamtuple.Item4, playDay, folderName));
                     }
                 }
             }

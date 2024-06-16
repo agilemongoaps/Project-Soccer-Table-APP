@@ -25,8 +25,9 @@ namespace Project_Soccer_Table
             Console.WriteLine("1. Print Table");
             Console.WriteLine("2. Sort Table");
             Console.WriteLine("3. Print league table");
-            Console.WriteLine("4. Export Table");
-            Console.WriteLine("5. Exit");
+            Console.WriteLine("4. Print play day table");
+            Console.WriteLine("5. Export Table");
+            Console.WriteLine("6. Exit");
             
             Console.Write("Enter the menu option: ");
             string menuOption = Console.ReadLine();
@@ -43,11 +44,14 @@ namespace Project_Soccer_Table
                     PrintLeagueTable();
                     break;
                 case "4":
+                    PrintDayMenu();
+                    break;
+                case "5":
                     Console.Write("\nExport path: ");
                     string exportOption = Console.ReadLine();
                     LeagueUtils.ExportToFile(exportOption, _leagueService.GetTable());
                     break;
-                case "5":
+                case "6":
                     Environment.Exit(0);
                     break;
                 default:
@@ -83,6 +87,46 @@ namespace Project_Soccer_Table
                 Console.WriteLine("Invalid leagueId. Press any key to return to the main menu.");
                 Console.ReadKey();
                 PrintMenu();
+            }
+        }
+
+        static void PrintDayMenu()
+        {
+            // Select the highest play day
+            List<Team> table = _leagueService.GetTable();
+            int highestPlayDay = 0;
+            
+            foreach (var team in table)
+            {
+                foreach (var playDay in team.PlayDays)
+                {
+                    if (playDay > highestPlayDay)
+                    {
+                        highestPlayDay = playDay;
+                    }
+                }
+            }
+            
+            Console.Clear();
+            Console.WriteLine($"Select a play day between 1 and {highestPlayDay}");
+            Console.WriteLine("Enter Exit to return to the main menu.");
+            Console.Write("Enter the play day: ");
+            string playDayInput = Console.ReadLine();
+            
+            if (int.TryParse(playDayInput, out int day) && day > 0 && day <= highestPlayDay)
+            {
+                table = SortService.FilterPlayDay(table, day);
+                PrintTable("Points", table);
+            }
+            else if(playDayInput.ToLower() == "exit")
+            {
+                PrintMenu();
+            }
+            else
+            {
+                Console.WriteLine("Invalid play day. Press any key to return to the main menu.");
+                Console.ReadKey();
+                PrintDayMenu();
             }
         }
         
@@ -157,9 +201,9 @@ namespace Project_Soccer_Table
             var leagueFolder = _fullPath;
 
             var results = LeagueUtils.ReadResults(leagueFolder);
-            foreach (var (team1, score1, team2, score2, league) in results)
+            foreach (var (team1, score1, team2, score2, playDay, league) in results)
             {
-                _leagueService.AddResult(team1, score1, team2, score2, league);
+                _leagueService.AddResult(team1, score1, team2, score2, playDay, league);
             }
         }
     }
