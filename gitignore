@@ -1,0 +1,97 @@
+# Ignore Visual Studio temporary files, build results, and
+# build directories.
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa]ppPackages/
+[Bb]in/
+[Oo]bj/
+
+# User-specific files
+.vscode/
+*.user
+*.userosscache
+*.sln.docstates
+
+# Mono auto generated files
+mono_crash.*
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# .NET directories
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# StyleCop
+StyleCopReport.xml
+
+# Files built by Visual Studio
+.vs/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.vcxproj*
+*.cache
+*.pdb
+*.opendb
+*.pmdl
+*.pidb
+
+# Visual Studio auto-generated files
+.vs/
+.vscode/
+
+# Rider
+.idea/
+*.sln.iml
+
+# Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Others
+*.log
+*.tlog
+*.patch
+*.cache
+*.wlog
+*.pidb
+
+# Temporary files
+*.tmp
+*.temp
+
+# Logs
+*.log
+*.log.*
