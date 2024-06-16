@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Runtime.CompilerServices;
 using Project_Soccer_Table.classes.services;
@@ -23,8 +24,9 @@ namespace Project_Soccer_Table
             Console.Clear();
             Console.WriteLine("1. Print Table");
             Console.WriteLine("2. Sort Table");
-            Console.WriteLine("3. Export Table");
-            Console.WriteLine("4. Exit");
+            Console.WriteLine("3. Print league table");
+            Console.WriteLine("4. Export Table");
+            Console.WriteLine("5. Exit");
             
             Console.Write("Enter the menu option: ");
             string menuOption = Console.ReadLine();
@@ -32,17 +34,20 @@ namespace Project_Soccer_Table
             switch (menuOption)
             {
                 case "1":
-                    PrintTable();
+                    PrintTable("Points", _leagueService.GetTable());
                     break;
                 case "2":
-                    PrintSortMenu();
+                    PrintSortMenu(_leagueService.GetTable());
                     break;
                 case "3":
-                    Console.Write("\nExportpart: ");
+                    PrintLeagueTable();
+                    break;
+                case "4":
+                    Console.Write("\nExport path: ");
                     string exportOption = Console.ReadLine();
                     LeagueUtils.ExportToFile(exportOption, _leagueService.GetTable());
                     break;
-                case "4":
+                case "5":
                     Environment.Exit(0);
                     break;
                 default:
@@ -50,8 +55,38 @@ namespace Project_Soccer_Table
                     break;
             }
         }
+
+        static void PrintLeagueTable()
+        {
+            Console.Clear();
+            List<string> leagues = _leagueService.GetLeagues();
+            
+            int count = 0;
+            for (int i = 0; i < leagues.Count; i++)
+            {
+                Console.WriteLine($"{i + 1}. {leagues[i]}");
+                count++;
+            }
+            
+            Console.Write("Enter the leagueId: ");
+            string leagueId = Console.ReadLine();
+            
+            List<Team> table = _leagueService.GetTable();
+            
+            if(int.TryParse(leagueId, out int leagueIndex) && leagueIndex > 0 && leagueIndex <= count)
+            {
+                table = SortService.FilterLeague(table, leagues[leagueIndex - 1]);
+                PrintTable("Points", table);
+            }
+            else
+            {
+                Console.WriteLine("Invalid leagueId. Press any key to return to the main menu.");
+                Console.ReadKey();
+                PrintMenu();
+            }
+        }
         
-        static void PrintSortMenu()
+        static void PrintSortMenu(List<Team> table = null)
         {
             Console.Clear();
             Console.WriteLine("1. Sort by Points");
@@ -65,35 +100,40 @@ namespace Project_Soccer_Table
             
             Console.Write("Enter the sort type: ");
             string sortType = Console.ReadLine();
+            
+            if (table == null)
+            {
+                table = _leagueService.GetTable();
+            }
 
             switch (sortType)
             {
                 case "1":
-                    PrintTable();
+                    PrintTable("Points", table);
                     break;
                 
                 case "2":
-                    PrintTable("GoalDifference");
+                    PrintTable("GoalDifference", table);
                     break;
                 
                 case "3":
-                    PrintTable("Wins");
+                    PrintTable("Wins", table);
                     break;
                 
                 case "4":
-                    PrintTable("Losses");
+                    PrintTable("Losses", table);
                     break;
                 
                 case "5":
-                    PrintTable("Draws");
+                    PrintTable("Draws", table);
                     break;
                 
                 case "6":
-                    PrintTable("GoalsScored");
+                    PrintTable("GoalsScored", table);
                     break;
                 
                 case "7":
-                    PrintTable("GoalsConceded");
+                    PrintTable("GoalsConceded", table);
                     break;
                 
                 default:
@@ -102,9 +142,8 @@ namespace Project_Soccer_Table
             }
         }
 
-        static void PrintTable(string sortOption = "Points")
+        static void PrintTable(string sortOption, List<Team> table)
         {
-            var table = _leagueService.GetTable();
             LeagueUtils.PrintTable(table, sortOption);
             Console.WriteLine("\nPress any key to return to the main menu.");
             Console.ReadKey();
@@ -118,9 +157,9 @@ namespace Project_Soccer_Table
             var leagueFolder = _fullPath;
 
             var results = LeagueUtils.ReadResults(leagueFolder);
-            foreach (var (team1, score1, team2, score2) in results)
+            foreach (var (team1, score1, team2, score2, league) in results)
             {
-                _leagueService.AddResult(team1, score1, team2, score2);
+                _leagueService.AddResult(team1, score1, team2, score2, league);
             }
         }
     }

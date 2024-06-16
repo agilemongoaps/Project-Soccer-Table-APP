@@ -100,10 +100,10 @@ namespace Project_Soccer_Table.utilities
             }
         }
 
-        public static List<(string team1, int score1, string team2, int score2)> ReadResults(string srcPath)
+        public static List<(string team1, int score1, string team2, int score2, string league)> ReadResults(string srcPath)
         {
             var folders = Directory.GetDirectories(srcPath);
-            var results = new List<(string team1, int score1, string team2, int score2)>();
+            var results = new List<(string team1, int score1, string team2, int score2, string league)>();
 
             foreach (var folder in folders)
             {
@@ -116,7 +116,7 @@ namespace Project_Soccer_Table.utilities
                     {
                         var teamtuple = ParseMatchResult(line, folderName);
 
-                        results.Add((teamtuple.Item1, teamtuple.Item2, teamtuple.Item3, teamtuple.Item4));
+                        results.Add((teamtuple.Item1, teamtuple.Item2, teamtuple.Item3, teamtuple.Item4, folderName));
                     }
                 }
             }

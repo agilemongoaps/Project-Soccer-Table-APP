@@ -7,13 +7,15 @@ namespace Project_Soccer_Table.classes.services
     public class LeagueService
     {
         private List<Team> Teams;
+        private List<string> Leagues;
  
         public LeagueService()
         {
             Teams = new List<Team>();
+            Leagues = new List<string>();
         }
  
-        public void AddResult(string team1, int score1, string team2, int score2)
+        public void AddResult(string team1, int score1, string team2, int score2, string league = "Default")
         {
             var team1Record = GetOrCreateTeam(team1);
             var team2Record = GetOrCreateTeam(team2);
@@ -42,6 +44,13 @@ namespace Project_Soccer_Table.classes.services
             team1Record.GoalsConceded += score2;
             team2Record.GoalsScored += score2;
             team2Record.GoalsConceded += score1;
+            team1Record.League = league;
+            team2Record.League = league;
+            
+            if(Leagues.Contains(league) == false)
+            {
+                Leagues.Add(league.ToLower());
+            }
         }
  
         public List<Team> GetTable()
@@ -52,6 +61,11 @@ namespace Project_Soccer_Table.classes.services
                 .ThenByDescending(t => t.Wins)
                 .ThenBy(t => t.Name)
                 .ToList();
+        }
+        
+        public List<string> GetLeagues()
+        {
+            return Leagues;
         }
  
         private Team GetOrCreateTeam(string name)

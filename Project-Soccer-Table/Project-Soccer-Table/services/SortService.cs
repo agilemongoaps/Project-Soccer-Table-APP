@@ -42,5 +42,12 @@ namespace Project_Soccer_Table.classes.services
             
             return teams;
         }
+        
+        public static List<Team> FilterLeague(List<Team> teams, string league)
+        {
+            Console.WriteLine(league);
+            Console.WriteLine(teams[0].League);
+            return teams.Where(t => t.League.ToLower() == league.ToLower()).ToList();
+        }
     }
 }

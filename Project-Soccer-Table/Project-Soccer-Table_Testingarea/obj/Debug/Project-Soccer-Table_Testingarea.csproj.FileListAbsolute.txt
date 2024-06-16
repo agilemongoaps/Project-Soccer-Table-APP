@@ -1,0 +1,11 @@
+O:\11 vsCode\_Repos\Project-Soccer-Table-APP\Project-Soccer-Table\Project-Soccer-Table_Testingarea\bin\Debug\Project_Soccer_Table_Testingarea.dll
+O:\11 vsCode\_Repos\Project-Soccer-Table-APP\Project-Soccer-Table\Project-Soccer-Table_Testingarea\bin\Debug\Project_Soccer_Table_Testingarea.pdb
+O:\11 vsCode\_Repos\Project-Soccer-Table-APP\Project-Soccer-Table\Project-Soccer-Table_Testingarea\bin\Debug\nunit.framework.dll
+O:\11 vsCode\_Repos\Project-Soccer-Table-APP\Project-Soccer-Table\Project-Soccer-Table_Testingarea\bin\Debug\Project_Soccer_Table.exe
+O:\11 vsCode\_Repos\Project-Soccer-Table-APP\Project-Soccer-Table\Project-Soccer-Table_Testingarea\bin\Debug\Project_Soccer_Table.pdb
+O:\11 vsCode\_Repos\Project-Soccer-Table-APP\Project-Soccer-Table\Project-Soccer-Table_Testingarea\bin\Debug\nunit.framework.xml
+O:\11 vsCode\_Repos\Project-Soccer-Table-APP\Project-Soccer-Table\Project-Soccer-Table_Testingarea\obj\Debug\Project-Soccer-Table_Testingarea.csproj.AssemblyReference.cache
+O:\11 vsCode\_Repos\Project-Soccer-Table-APP\Project-Soccer-Table\Project-Soccer-Table_Testingarea\obj\Debug\Project-Soccer-Table_Testingarea.csproj.CoreCompileInputs.cache
+O:\11 vsCode\_Repos\Project-Soccer-Table-APP\Project-Soccer-Table\Project-Soccer-Table_Testingarea\obj\Debug\Project-Soccer-Table_Testingarea.csproj.CopyComplete
+O:\11 vsCode\_Repos\Project-Soccer-Table-APP\Project-Soccer-Table\Project-Soccer-Table_Testingarea\obj\Debug\Project_Soccer_Table_Testingarea.dll
+O:\11 vsCode\_Repos\Project-Soccer-Table-APP\Project-Soccer-Table\Project-Soccer-Table_Testingarea\obj\Debug\Project_Soccer_Table_Testingarea.pdb
